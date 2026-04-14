@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="AI-powered recipe recommendation system. Select your ingredients and discover delicious recipes with guided cooking instructions.">
+    <title>ChefAI — Smart Recipe Recommendations</title>
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🍳</text></svg>">
+    <link rel="stylesheet" href="/static/css/style.css">
+</head>
+<body>
+
+    <!-- Animated Background -->
+    <div class="bg-animation"></div>
+
+    <!-- Navbar -->
+    <nav class="navbar" id="navbar">
+        <a href="/" class="nav-brand">
+            <span class="nav-logo">🍳</span>
+            <div>
+                <div class="nav-title">ChefAI</div>
+                <div class="nav-subtitle">Smart Recipe Engine</div>
+            </div>
+        </a>
+        <div class="nav-stats">
+            <div class="nav-stat">
+                <span>🧺</span>
+                <span>Selected: <span class="count" id="nav-selected-count">0</span></span>
+            </div>
+            <div class="nav-stat">
+                <span>📖</span>
+                <span>15 Recipes</span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main App Container -->
+    <div class="app-container">
+
+        <!-- ═══════════════════════════════════════════
+             HERO SECTION
+             ═══════════════════════════════════════════ -->
+        <section class="hero-section">
+            <div class="floating-emojis">
+                <span class="float-emoji">🍕</span>
+                <span class="float-emoji">🥗</span>
+                <span class="float-emoji">🍜</span>
+                <span class="float-emoji">🌮</span>
+                <span class="float-emoji">🍛</span>
+                <span class="float-emoji">🧁</span>
+            </div>
+
+            <div class="hero-badge">
+                <span class="dot"></span>
+                AI-Powered Recipe Engine
+            </div>
+
+            <h1 class="hero-title">
+                Cook Smarter with<br>
+                <span class="gradient-text">AI-Powered</span>
+                <span class="warm-text">Recipes</span>
+            </h1>
+
+            <p class="hero-description">
+                Select the ingredients you have on hand, and our intelligent engine
+                will craft personalized recipes with step-by-step guided cooking.
+            </p>
+
+            <div class="hero-cta">
+                <button class="btn-primary" onclick="scrollToIngredients()">
+                    🚀 Start Cooking
+                </button>
+                <button class="btn-secondary" onclick="scrollToIngredients()">
+                    📖 Browse Ingredients
+                </button>
+            </div>
+        </section>
+
+        <!-- ═══════════════════════════════════════════
+             INGREDIENT SELECTION
+             ═══════════════════════════════════════════ -->
+        <section id="ingredients-section">
+            <div class="section-header">
+                <div class="section-tag">
+                    <span>🧪</span> Step 1
+                </div>
+                <h2 class="section-title">What's in your kitchen?</h2>
+                <p class="section-description">
+                    Select the ingredients you have available. The more you select, the better the recommendations.
+                </p>
+            </div>
+
+            <!-- Search -->
+            <div class="search-container">
+                <span class="search-icon">🔍</span>
+                <input type="text" class="search-bar" id="search-bar" placeholder="Search ingredients..." autocomplete="off">
+            </div>
+
+            <!-- Category Tabs -->
+            <div class="category-tabs" id="category-tabs"></div>
+
+            <!-- Selected Summary -->
+            <div class="selected-summary" id="selected-summary" style="display:none;"></div>
+
+            <!-- Ingredients Grid -->
+            <div class="ingredients-grid" id="ingredients-grid"></div>
+
+            <!-- Generate Button -->
+            <button class="btn-generate" id="btn-generate" onclick="generateRecipes()" disabled>
+                <span class="btn-text">✨ Generate Recipes</span>
+                <span class="spinner"></span>
+            </button>
+        </section>
+
+        <!-- ═══════════════════════════════════════════
+             RECIPE RESULTS
+             ═══════════════════════════════════════════ -->
+        <section id="recipes-section">
+            <div class="recipes-header">
+                <div>
+                    <div class="section-tag">
+                        <span>🍽️</span> Step 2
+                    </div>
+                    <h2 class="recipes-count" id="recipes-count"></h2>
+                </div>
+            </div>
+
+            <!-- Smart Suggestions -->
+            <div id="smart-suggestions" class="smart-suggestions" style="display:none;"></div>
+
+            <!-- Recipe Cards Grid -->
+            <div class="recipes-grid" id="recipes-grid"></div>
+        </section>
+
+    </div>
+
+    <!-- ═══════════════════════════════════════════
+         COOK MODE MODAL
+         ═══════════════════════════════════════════ -->
+    <div class="cook-modal-overlay" id="cook-modal">
+        <div class="cook-modal" id="cook-modal-content">
+            <!-- Populated by JS -->
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="/static/js/app.js"></script>
+</body>
+</html>
