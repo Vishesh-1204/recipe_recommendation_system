@@ -9,35 +9,35 @@
 /* ---------- CSS Variables / Design Tokens ---------- */
 :root {
     /* Background Gradients */
-    --bg-primary: #0D0D0D;
-    --bg-secondary: #1A1A2E;
-    --bg-tertiary: #16213E;
+    --bg-primary: #0F0F14;
+    --bg-secondary: #1F2937;
+    --bg-tertiary: #151821;
 
     /* Accent Colors */
-    --accent-purple: #7F5AF0;
-    --accent-blue: #00C2FF;
-    --accent-green: #2ECC71;
-    --accent-orange: #FF8C42;
-    --accent-pink: #FF6B9D;
+    --accent-purple: #FF5C43;
+    --accent-blue: #FFC857;
+    --accent-green: #FF9A3D;
+    --accent-orange: #FF7A18;
+    --accent-pink: #FF3D54;
 
     /* Gradients */
-    --gradient-primary: linear-gradient(135deg, #7F5AF0, #00C2FF);
-    --gradient-warm: linear-gradient(135deg, #FF8C42, #FF6B9D);
-    --gradient-green: linear-gradient(135deg, #2ECC71, #00C2FF);
-    --gradient-hero: linear-gradient(160deg, #0D0D0D 0%, #1A1A2E 40%, #16213E 100%);
+    --gradient-primary: linear-gradient(135deg, #FF7A18, #FF3D54);
+    --gradient-warm: linear-gradient(135deg, #FFC857, #FF7A18);
+    --gradient-green: linear-gradient(135deg, #FFC857, #FF7A18);
+    --gradient-hero: radial-gradient(circle at top, rgba(255, 122, 24, 0.24), transparent 32%), linear-gradient(160deg, #0F0F14 0%, #151821 48%, #1F2937 100%);
 
     /* Glass Effect */
-    --glass-bg: rgba(255, 255, 255, 0.04);
-    --glass-bg-hover: rgba(255, 255, 255, 0.08);
-    --glass-border: rgba(255, 255, 255, 0.08);
-    --glass-border-hover: rgba(255, 255, 255, 0.15);
-    --glass-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+    --glass-bg: rgba(31, 41, 55, 0.76);
+    --glass-bg-hover: rgba(40, 51, 68, 0.92);
+    --glass-border: rgba(255, 200, 87, 0.08);
+    --glass-border-hover: rgba(255, 122, 24, 0.30);
+    --glass-shadow: 0 18px 48px rgba(0, 0, 0, 0.38);
     --glass-blur: blur(20px);
 
     /* Text */
-    --text-primary: #EAEAEA;
-    --text-secondary: rgba(234, 234, 234, 0.65);
-    --text-muted: rgba(234, 234, 234, 0.4);
+    --text-primary: #F9FAFB;
+    --text-secondary: rgba(249, 250, 251, 0.72);
+    --text-muted: rgba(249, 250, 251, 0.46);
 
     /* Spacing */
     --radius-sm: 10px;
@@ -70,7 +70,10 @@ html {
 
 body {
     font-family: var(--font-body);
-    background: var(--bg-primary);
+    background:
+        radial-gradient(circle at 20% 0%, rgba(255, 122, 24, 0.12), transparent 24%),
+        radial-gradient(circle at 80% 10%, rgba(255, 200, 87, 0.10), transparent 22%),
+        var(--bg-primary);
     color: var(--text-primary);
     min-height: 100vh;
     overflow-x: hidden;
@@ -102,7 +105,7 @@ body {
 .bg-animation::before {
     width: 600px;
     height: 600px;
-    background: var(--accent-purple);
+    background: var(--accent-orange);
     top: -10%;
     right: -5%;
     animation-delay: 0s;
@@ -111,7 +114,7 @@ body {
 .bg-animation::after {
     width: 500px;
     height: 500px;
-    background: var(--accent-orange);
+    background: var(--accent-blue);
     bottom: -10%;
     left: -5%;
     animation-delay: -10s;
@@ -128,7 +131,7 @@ body {
 ::-webkit-scrollbar { width: 6px; }
 ::-webkit-scrollbar-track { background: var(--bg-primary); }
 ::-webkit-scrollbar-thumb {
-    background: var(--accent-purple);
+    background: var(--gradient-primary);
     border-radius: 3px;
 }
 
@@ -154,7 +157,7 @@ body {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    background: rgba(13, 13, 13, 0.7);
+    background: rgba(15, 15, 20, 0.72);
     backdrop-filter: var(--glass-blur);
     border-bottom: 1px solid var(--glass-border);
     transition: var(--transition-smooth);
@@ -162,7 +165,7 @@ body {
 
 .navbar.scrolled {
     padding: 10px 32px;
-    background: rgba(13, 13, 13, 0.92);
+    background: rgba(15, 15, 20, 0.94);
 }
 
 .nav-brand {
@@ -219,7 +222,7 @@ body {
 
 .nav-stat .count {
     font-weight: 700;
-    color: var(--accent-green);
+    color: var(--accent-blue);
     font-size: 15px;
 }
 
@@ -241,7 +244,7 @@ body {
     border: 1px solid var(--glass-border);
     border-radius: 100px;
     font-size: 13px;
-    color: var(--accent-green);
+    color: var(--accent-blue);
     margin-bottom: 28px;
     animation: fadeInDown 0.8s ease;
 }
@@ -249,7 +252,7 @@ body {
 .hero-badge .dot {
     width: 6px;
     height: 6px;
-    background: var(--accent-green);
+    background: var(--accent-blue);
     border-radius: 50%;
     animation: blink 1.5s infinite;
 }
@@ -329,7 +332,7 @@ body {
 
 .btn-primary:hover {
     transform: translateY(-3px);
-    box-shadow: 0 12px 40px rgba(127, 90, 240, 0.4);
+    box-shadow: 0 16px 40px rgba(255, 122, 24, 0.35);
 }
 
 .btn-primary:hover::before {
@@ -408,7 +411,7 @@ body {
     border: 1px solid var(--glass-border);
     border-radius: 100px;
     font-size: 12px;
-    color: var(--accent-purple);
+    color: var(--accent-blue);
     text-transform: uppercase;
     letter-spacing: 1.5px;
     margin-bottom: 16px;
@@ -458,8 +461,8 @@ body {
 }
 
 .search-bar:focus {
-    border-color: var(--accent-purple);
-    box-shadow: 0 0 30px rgba(127, 90, 240, 0.15);
+    border-color: var(--accent-orange);
+    box-shadow: 0 0 30px rgba(255, 122, 24, 0.18);
 }
 
 .search-icon {
@@ -504,9 +507,9 @@ body {
 }
 
 .category-tab.active {
-    background: rgba(127, 90, 240, 0.15);
-    border-color: var(--accent-purple);
-    color: var(--accent-purple);
+    background: rgba(255, 122, 24, 0.14);
+    border-color: var(--accent-orange);
+    color: var(--accent-blue);
 }
 
 /* Ingredient Grid */
@@ -550,10 +553,10 @@ body {
 }
 
 .ingredient-chip.selected {
-    border-color: var(--accent-green);
-    background: rgba(46, 204, 113, 0.12);
-    color: var(--accent-green);
-    box-shadow: 0 0 20px rgba(46, 204, 113, 0.1);
+    border-color: var(--accent-orange);
+    background: rgba(255, 122, 24, 0.16);
+    color: var(--accent-blue);
+    box-shadow: 0 0 24px rgba(255, 122, 24, 0.14);
 }
 
 .ingredient-chip.selected .chip-check {
@@ -579,7 +582,7 @@ body {
     right: 6px;
     width: 18px;
     height: 18px;
-    background: var(--accent-green);
+    background: var(--gradient-primary);
     border-radius: 50%;
     align-items: center;
     justify-content: center;
@@ -613,7 +616,7 @@ body {
     font-size: 28px;
     font-weight: 800;
     font-family: var(--font-display);
-    background: var(--gradient-green);
+    background: var(--gradient-primary);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
@@ -634,11 +637,11 @@ body {
 
 .mini-chip {
     padding: 4px 12px;
-    background: rgba(46, 204, 113, 0.1);
-    border: 1px solid rgba(46, 204, 113, 0.2);
+    background: rgba(255, 200, 87, 0.1);
+    border: 1px solid rgba(255, 200, 87, 0.18);
     border-radius: 100px;
     font-size: 12px;
-    color: var(--accent-green);
+    color: var(--accent-blue);
     display: flex;
     align-items: center;
     gap: 4px;
@@ -665,7 +668,7 @@ body {
 
 .btn-generate:hover {
     transform: translateY(-3px) scale(1.02);
-    box-shadow: 0 16px 48px rgba(127, 90, 240, 0.4);
+    box-shadow: 0 16px 48px rgba(255, 122, 24, 0.35);
 }
 
 .btn-generate:disabled {
@@ -702,8 +705,8 @@ body {
     align-items: center;
     gap: 6px;
     padding: 10px 20px;
-    background: rgba(255, 107, 157, 0.1);
-    border: 1px solid rgba(255, 107, 157, 0.2);
+    background: rgba(255, 61, 84, 0.1);
+    border: 1px solid rgba(255, 61, 84, 0.2);
     border-radius: var(--radius-md);
     color: var(--accent-pink);
     font-family: var(--font-body);
@@ -714,7 +717,7 @@ body {
 }
 
 .btn-clear:hover {
-    background: rgba(255, 107, 157, 0.2);
+    background: rgba(255, 61, 84, 0.2);
 }
 
 /* ============================================================
@@ -756,14 +759,14 @@ body {
 .smart-suggestions {
     padding: 20px 24px;
     background: var(--glass-bg);
-    border: 1px solid rgba(127, 90, 240, 0.15);
+    border: 1px solid rgba(255, 122, 24, 0.18);
     border-radius: var(--radius-lg);
     margin-bottom: 32px;
 }
 
 .suggestions-title {
     font-size: 14px;
-    color: var(--accent-purple);
+    color: var(--accent-blue);
     font-weight: 600;
     margin-bottom: 12px;
     display: flex;
@@ -779,8 +782,8 @@ body {
 
 .suggestion-chip {
     padding: 8px 16px;
-    background: rgba(127, 90, 240, 0.08);
-    border: 1px solid rgba(127, 90, 240, 0.15);
+    background: rgba(255, 122, 24, 0.08);
+    border: 1px solid rgba(255, 122, 24, 0.14);
     border-radius: 100px;
     font-size: 13px;
     color: var(--text-secondary);
@@ -792,9 +795,9 @@ body {
 }
 
 .suggestion-chip:hover {
-    background: rgba(127, 90, 240, 0.15);
-    color: var(--accent-purple);
-    border-color: var(--accent-purple);
+    background: rgba(255, 122, 24, 0.16);
+    color: var(--accent-blue);
+    border-color: var(--accent-orange);
 }
 
 /* Recipe Cards Grid */
@@ -826,7 +829,7 @@ body {
 .recipe-card:hover {
     transform: translateY(-8px);
     border-color: var(--glass-border-hover);
-    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5), 0 0 40px rgba(127, 90, 240, 0.1);
+    box-shadow: 0 22px 60px rgba(0, 0, 0, 0.46), 0 0 44px rgba(255, 122, 24, 0.12);
 }
 
 .recipe-card-header {
@@ -873,27 +876,27 @@ body {
 }
 
 .match-perfect {
-    background: rgba(46, 204, 113, 0.15);
-    color: var(--accent-green);
-    border: 1px solid rgba(46, 204, 113, 0.3);
+    background: rgba(255, 200, 87, 0.14);
+    color: var(--accent-blue);
+    border: 1px solid rgba(255, 200, 87, 0.28);
 }
 
 .match-great {
-    background: rgba(0, 194, 255, 0.15);
-    color: var(--accent-blue);
-    border: 1px solid rgba(0, 194, 255, 0.3);
+    background: rgba(255, 154, 61, 0.14);
+    color: var(--accent-green);
+    border: 1px solid rgba(255, 154, 61, 0.28);
 }
 
 .match-good {
-    background: rgba(127, 90, 240, 0.15);
-    color: var(--accent-purple);
-    border: 1px solid rgba(127, 90, 240, 0.3);
+    background: rgba(255, 122, 24, 0.14);
+    color: var(--accent-orange);
+    border: 1px solid rgba(255, 122, 24, 0.28);
 }
 
 .match-partial {
-    background: rgba(255, 140, 66, 0.15);
-    color: var(--accent-orange);
-    border: 1px solid rgba(255, 140, 66, 0.3);
+    background: rgba(255, 61, 84, 0.12);
+    color: var(--accent-pink);
+    border: 1px solid rgba(255, 61, 84, 0.24);
 }
 
 .recipe-description {
@@ -956,11 +959,11 @@ body {
 .recipe-missing {
     padding: 12px 24px;
     margin: 0 24px 16px;
-    background: rgba(255, 140, 66, 0.06);
-    border: 1px solid rgba(255, 140, 66, 0.1);
+    background: rgba(255, 200, 87, 0.08);
+    border: 1px solid rgba(255, 200, 87, 0.16);
     border-radius: var(--radius-sm);
     font-size: 12px;
-    color: var(--accent-orange);
+    color: var(--accent-blue);
 }
 
 .recipe-missing strong {
@@ -994,7 +997,7 @@ body {
 
 .btn-cook:hover {
     transform: translateY(-2px);
-    box-shadow: 0 8px 24px rgba(255, 140, 66, 0.3);
+    box-shadow: 0 10px 28px rgba(255, 122, 24, 0.32);
 }
 
 .recipe-tags {
@@ -1035,7 +1038,7 @@ body {
     width: 100%;
     max-width: 700px;
     max-height: 90vh;
-    background: var(--bg-secondary);
+    background: linear-gradient(180deg, rgba(31, 41, 55, 0.98), rgba(21, 24, 33, 0.98));
     border: 1px solid var(--glass-border);
     border-radius: var(--radius-xl);
     overflow-y: auto;
@@ -1092,7 +1095,7 @@ body {
 }
 
 .btn-close-cook:hover {
-    background: rgba(255, 107, 157, 0.15);
+    background: rgba(255, 61, 84, 0.15);
     color: var(--accent-pink);
     border-color: var(--accent-pink);
 }
@@ -1155,11 +1158,11 @@ body {
 
 .step-tip {
     padding: 12px 16px;
-    background: rgba(255, 140, 66, 0.08);
-    border-left: 3px solid var(--accent-orange);
+    background: rgba(255, 200, 87, 0.08);
+    border-left: 3px solid var(--accent-blue);
     border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
     font-size: 14px;
-    color: var(--accent-orange);
+    color: var(--accent-blue);
     margin-bottom: 16px;
 }
 
@@ -1174,8 +1177,8 @@ body {
     align-items: center;
     gap: 16px;
     padding: 16px;
-    background: rgba(127, 90, 240, 0.08);
-    border: 1px solid rgba(127, 90, 240, 0.15);
+    background: rgba(255, 122, 24, 0.08);
+    border: 1px solid rgba(255, 122, 24, 0.16);
     border-radius: var(--radius-md);
 }
 
@@ -1183,16 +1186,16 @@ body {
     font-family: var(--font-display);
     font-size: 32px;
     font-weight: 700;
-    color: var(--accent-purple);
+    color: var(--accent-blue);
     min-width: 80px;
 }
 
 .btn-timer {
     padding: 10px 20px;
-    background: rgba(127, 90, 240, 0.15);
-    border: 1px solid rgba(127, 90, 240, 0.3);
+    background: rgba(255, 122, 24, 0.14);
+    border: 1px solid rgba(255, 122, 24, 0.24);
     border-radius: var(--radius-sm);
-    color: var(--accent-purple);
+    color: var(--accent-orange);
     font-family: var(--font-body);
     font-size: 14px;
     font-weight: 600;
@@ -1201,7 +1204,7 @@ body {
 }
 
 .btn-timer:hover {
-    background: rgba(127, 90, 240, 0.25);
+    background: rgba(255, 122, 24, 0.22);
 }
 
 .timer-label {
@@ -1248,15 +1251,15 @@ body {
 
 .btn-step-next:hover {
     transform: translateY(-2px);
-    box-shadow: 0 8px 24px rgba(127, 90, 240, 0.3);
+    box-shadow: 0 8px 24px rgba(255, 122, 24, 0.3);
 }
 
 .btn-finish {
-    background: var(--gradient-green) !important;
+    background: var(--gradient-warm) !important;
 }
 
 .btn-finish:hover {
-    box-shadow: 0 8px 24px rgba(46, 204, 113, 0.3) !important;
+    box-shadow: 0 8px 24px rgba(255, 200, 87, 0.28) !important;
 }
 
 /* Completion */

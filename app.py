@@ -77,7 +77,11 @@ def api_recipe_detail(recipe_id):
 # ---------------------------------------------------------------------------
 # Run
 # ---------------------------------------------------------------------------
+import sys
+import io
 if __name__ == "__main__":
+    if isinstance(sys.stdout, io.TextIOWrapper):
+        sys.stdout.reconfigure(encoding='utf-8')
     print("\n🍳 AI Recipe Recommendation System")
     print("=" * 40)
     print("🌐 Open: http://localhost:5000")
